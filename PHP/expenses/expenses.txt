@@ -1,0 +1,11 @@
+2013-09-20 00:20:31 > Sandwich > food > 4.00
+2013-09-20 00:20:40 > Beer > other > 2.00
+2013-09-20 00:20:47 > Car Wash > other > 10.00
+2013-09-20 00:20:59 > T-Shirt > clothes > 20.55
+2013-09-20 00:21:15 > Phone Bill > other > 50.06
+2013-09-20 00:21:24 > Vacation > travel > 2000.00
+2013-09-20 00:22:25 > Pizza > food > 10.50
+2013-09-20 00:22:48 > Chocolate > food > 3.80
+2013-09-20 00:41:03 > Sandwich > food > 10.40
+2013-09-20 00:54:34 > Spaghetti > food > 8.70
+2013-09-20 01:15:06 > Jeans > clothes > 20
