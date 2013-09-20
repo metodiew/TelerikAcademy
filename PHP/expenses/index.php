@@ -53,10 +53,10 @@ if ( isset( $_POST['filter'] ) ) {
 			}
 						
 			echo '<tr>';
-			echo '<td>' . $columns[0] . '</td>' ;
-			echo '<td>' . $columns[1] . '</td>';
-			echo '<td>' . $columns[2] . '</td>';
-			echo '<td>' . $columns[3] . '</td>';
+			
+			foreach ( $columns as $key => $column ) {
+				echo '<td>' . $columns[$key] . '</td>' ;	
+			}
 			echo '</tr>';
 			
 			$sum += (float) $columns[3];
