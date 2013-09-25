@@ -9,21 +9,24 @@ require_once 'includes/constants.php';
 
 <?php 
 if ( isset( $_POST['submit'] ) ) {
-	$name 			= htmlspecialchars( $_POST['name'] );
+	$name 			= trim( htmlspecialchars( $_POST['name'] ) );
 	$name			= stripslashes( $name );
 	$name 			= str_replace( '>', '', $name );
 	$price 			= trim( $_POST['price'] );
+	$price			= str_replace( ',', '.', $price );
+	$price			= (float) $price;
+	$price			= number_format( $price, 2, '.', '' );
 	$price 			= str_replace( '>', '', $price );
 	$selectedType	= $_POST['type'];
 	$created 		= date( 'Y-m-d H:i:s' );
 	$error 			= false;
 	
-	if ( empty( $name ) || mb_strlen( $name ) < 3 ) {
+	if ( empty( $name ) || mb_strlen( $name ) < 4 ) {
 		echo '<p>Too short name</p>';
 		$error = true;
 	}
 	
-	if ( ! is_numeric( $price ) || $price < 0 ) {
+	if ( $price < 0 ) {
 		echo '<p>Invalid price</p>';
 		$error = true;
 	}
@@ -34,7 +37,7 @@ if ( isset( $_POST['submit'] ) ) {
 	}
 	
 	if ( ! $error ) {
-		$result = "\n" . $created . ' > ' . $name . ' > ' . $selectedType . ' > ' . $price;
+		$result = $created . ' > ' . $name . ' > ' . $selectedType . ' > ' . $price . "\n";
 		// Write Data in file. Advice not use this, this is just for example :-) 
 		file_put_contents( 'expenses.txt', $result, FILE_APPEND );
 	}
@@ -53,6 +56,9 @@ if ( isset( $_POST['submit'] ) ) {
 		<select name="type">
 			<?php 
 			foreach ( $expenses_types as $key => $type ) {
+				if ( $type == 'All' ) {
+					continue;
+				}
 				echo '<option value="' . $key . '">' . $type . '</option>';
 			}
 			?>
