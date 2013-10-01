@@ -11,6 +11,12 @@ require_once 'inc/functions.php';
 <head>
 	<meta charset="utf-8">
 	<title><?php echo $pageTitle; ?></title>
+	<style type="text/css">
+		#wrapper {
+			margin-top: 100px;
+		}
+	</style>
 </head>
 <body>
 	<?php require_once 'inc/menu.php'; ?>
+	<div id="wrapper">

@@ -1,12 +1,11 @@
 <?php
-$pageTitle = 'Upload File';
+$pageTitle = 'Upload';
 require_once 'inc/header.php';
 ?>
 
-
 <?php 
 // Check if user is logged
-if ( isLoggeduser() ) {
+if ( isLoggedUser() ) {
 ?>
 	<form method="POST" enctype="multipart/form-data">
 		<input type="file" id="file" name="file" />
@@ -49,15 +48,13 @@ if ( isLoggeduser() ) {
 		} else {
 			echo '<p>Problem with file mime type</p>';
 		}
-		
-	}
+	} // END if isset
 
-} else {
+} else { // IF isLoggedUser()
 	echo "You don't have sufficient access to this page";
 	echo '<p><a href="login.php">Login</a></p>';
 }
 ?>
-
 
 <?php 
 require_once 'inc/footer.php';

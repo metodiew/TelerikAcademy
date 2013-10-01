@@ -10,7 +10,7 @@ $defaultUser = 'user';
 $defaultPass = 'qwerty';
 
 
-// Login form logic
+// Login form
 if ( isset( $_POST['login'] ) ) {
 	$username = trim( $_POST['username'] );
 	$pass = trim( $_POST['pass'] );
@@ -25,7 +25,6 @@ if ( isset( $_POST['login'] ) ) {
 		echo 'Incorrect username or password';
 	}
 }
-
 ?>
 
 <form method="POST">
@@ -34,7 +33,7 @@ if ( isset( $_POST['login'] ) ) {
 		<input type="text" id="username" name="username" />
 	</div>
 	<div>
-		<label for="password">Password:</label>
+		<label for="pass">Password:</label>
 		<input type="password" id="pass" name="pass" />
 	</div>
 	<input type="submit" id="login" name="login" value="Login" />

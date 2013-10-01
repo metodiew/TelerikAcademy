@@ -1,14 +1,12 @@
 <?php
-$pageTitle = 'Upload Manager Index';
+$pageTitle = 'Upload Manager';
 require_once 'inc/header.php';
 ?>
 
-<h2>Upload Manager</h2>
-
 <?php 
-if ( ! isset( $_SESSION['isLogged'] ) ) {
-	require_once 'login.php';
-} else {
+if ( isLoggedUser() ) {
 	require_once 'files.php';
+} else {
+	echo '<h2>Upload Manager</h2>';
+	require_once 'login.php';
 }
-
