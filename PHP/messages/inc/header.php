@@ -11,16 +11,10 @@ require_once 'inc/functions.php';
 <head>
 	<meta charset="utf-8">
 	<title><?php echo $pageTitle; ?></title>
-	<style type="text/css">
-		#wrapper {
-			margin-top: 50px;
-		}
-		
-		.error {
-			color: red;
-		}
-	</style>
+	<link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 <body>
-	<?php require_once 'inc/menu.php'; ?>
+	<div id="wrapper">
+		<?php require_once 'inc/menu.php'; ?>
+		<div id="content">
 	<div id="wrapper">

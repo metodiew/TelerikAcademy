@@ -47,6 +47,8 @@ if ( isLoggedUser() ) {
 	}
 	?>
 	
+	<h1>Login</h1>
+	
 	<form method="POST">
 		<div>
 			<label for="username">Username:</label>
@@ -58,10 +60,6 @@ if ( isLoggedUser() ) {
 		</div>
 		<input type="submit" id="login" name="login" value="Login" />
 	</form>
-	
-	<div>
-		<a href="register.php">Registration</a>
-	</div>
 
 <?php
 }

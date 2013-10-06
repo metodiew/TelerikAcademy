@@ -74,11 +74,12 @@ if ( isLoggedUser() ) {
 	}
 	?>
 	
+	<h1>Register</h1>
+	
 	<form method="POST">
 		<div>
 			<label for="username">Username:</label>
 			<input type="text" id="username" name="username" />
-			<span>* Username must be between 5 and 50 symbols</span>
 		</div>
 		<div>
 			<label for="pass">Password:</label>

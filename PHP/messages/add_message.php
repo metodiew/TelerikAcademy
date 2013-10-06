@@ -8,16 +8,33 @@ require_once 'inc/header.php';
 if ( isLoggedUser() ) {
 ?>
 
+	<h1>Add New Message</h1>
+	
 	<form method="POST">
-		<div>
-			<label for="title">Title:</label>
-			<input type="text" id="title" name="title" />
-		</div>
-		<div>
-			<label for="message">Message:</label>
-			<textarea id="message" name="message" rows="" cols=""></textarea>
-		</div>
-		<input type="submit" id="submit" name="submit" value="Submit" />
+		<table>
+			<tr>
+				<td>
+					<label for="title">Title:</label>
+				</td>
+				<td>
+					<input type="text" id="title" name="title" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="message">Message:</label>
+				</td>
+				<td>
+					<textarea id="message" name="message"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<input type="submit" id="submit" name="submit" value="Submit" />
+				</td>
+			</tr>
+		</table>
 	</form>
 	
 	<?php 
@@ -52,13 +69,14 @@ if ( isLoggedUser() ) {
 			// If everythings is fine, register the user and insert details in DB
 			$userID = getUserID();
 			$date = date( 'Y-m-d H:i:s' );
+			
 			if ( $error == false ) {
 				$sql = 'INSERT INTO messages ( id, title, message, created, user_id )
                 		VALUES ( NULL, "' . $title . '", "' . $message . '", "' . $date . '", "' . $userID . '" );
                 ';
 				
 				if ( mysqli_query( $dbConnection, $sql ) ) {
-					header( 'Location: messages.php' ); 
+					header( 'Location: index.php?success=addMessage' ); 
 					exit;
 				} else {
 					echo '<span class="error">Something went wrong, please try again!</span>';

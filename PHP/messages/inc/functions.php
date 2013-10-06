@@ -59,3 +59,29 @@ function getUserID() {
 	
 	return $id;
 }
+
+/**
+ * Check if current is administrator
+ * 
+ *  @return boolean
+ */
+function isAdmin() {
+	$isAdmin = false;
+	$id = getUserID();
+	
+	$dbConnection = dbConnection();
+	
+	$sql = 'SELECT id, is_admin
+			FROM users
+			WHERE id = "' . $id . '"
+				AND is_admin = 1
+	';
+	
+	$result = mysqli_query( $dbConnection, $sql );
+	
+	if ( $result->num_rows > 0 ) {
+		$isAdmin = true;
+	}
+	
+	return $isAdmin;
+}

@@ -1,4 +1,4 @@
-<nav>
+<nav id="menu">
 	<a href="index.php">Index</a>
 	<?php 
 	// Check if user is logged
