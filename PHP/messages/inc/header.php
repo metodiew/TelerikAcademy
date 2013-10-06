@@ -17,4 +17,3 @@ require_once 'inc/functions.php';
 	<div id="wrapper">
 		<?php require_once 'inc/menu.php'; ?>
 		<div id="content">
-	<div id="wrapper">
