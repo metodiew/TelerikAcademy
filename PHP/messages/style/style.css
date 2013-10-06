@@ -1,0 +1,66 @@
+body {
+	background: #D9DEDA;
+}
+
+#wrapper {
+	width: 960px;
+	margin: 50px auto;
+	background: #4F5951;
+}
+
+#wrapper h2 {
+	width: 100%;
+	text-align: center;
+	color: #fff;
+}
+
+#menu {
+	padding: 10px;
+	text-align: center;
+	background: #7A888C;
+}
+
+#menu a {
+	text-decoration: none;
+}
+
+#content {
+	margin: 50px auto;
+	min-height: 100px;
+	text-align: center;
+}
+
+.success {
+	color: #0EAB2D;
+}
+
+.error {
+	color: red;
+}
+
+#title {
+	width: 300px;
+}
+
+#message {
+	width: 300px;
+	height: 100px;
+}
+
+#messages-feed {
+	width: 80%;
+	margin: 0 auto;
+	padding-bottom: 10px;
+	color: #fff;
+	list-style-type: none;
+}
+
+#messages-feed li:nth-child(odd) {
+	background: #CDD1CE;
+	color: #000;
+}
+
+#messages-feed li:nth-child(even) {
+	background: #A3B8A7;
+	color: #000;
+}
