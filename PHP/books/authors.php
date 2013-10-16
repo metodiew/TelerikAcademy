@@ -11,6 +11,7 @@ include 'inc/header.php';
 $order = 'ASC';
 if ( isset( $_GET['order'] ) ) {
 	$order = sanitizeQuery( $_GET['order'] );
+	$order = mysqli_real_escape_string( $order );
 }
 
 $query = "
@@ -27,7 +28,7 @@ if ( isset( $_POST['submit'] ) ) {
 
 	// Sanitize the Query
 	$author = sanitizeQuery( $_POST['author'] );
-	$author = mysqli_real_escape_string ( $dbConnection, $author );
+	$author = mysqli_real_escape_string( $dbConnection, $author );
 
 	// Check length of the author's name
 	$length = mb_strlen( $author );
@@ -51,7 +52,7 @@ if ( isset( $_POST['submit'] ) ) {
 			if ( mysqli_num_rows( $result ) > 0 ) {
 				echo "<p>The author is already existing.</p>";
 				$error = true;
-				exit();
+				exit;
 			 } else {
 		
 				$query = "

@@ -64,7 +64,7 @@ if (isset ( $_POST['submit'] )) {
 			if ( mysqli_num_rows( $result ) > 0 ) {
 				echo "<p>The Books is already existing.</p>";
 				$error = true;
-				exit();
+				exit;
 			 } else {
 				 $query = "
 				 	INSERT INTO books (book_title) 

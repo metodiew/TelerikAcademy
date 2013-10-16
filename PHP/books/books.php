@@ -9,7 +9,7 @@ if ( isset ( $_GET['authorid'] ) ) {
 	$authorID = sanitizeQuery( $_GET['authorid'] );
 } else {	
 	header ( 'Location:  index.php' );
-	exit();
+	exit;
 }
 
 $query = "
